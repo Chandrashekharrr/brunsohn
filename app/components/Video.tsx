@@ -2,8 +2,8 @@ import Btn from "./Btm";
 
 export default function Video() {
   return (
-    <div className="MainVideo w-full h-[80vh] rounded-md overflow-hidden relative">
-      <div className="btnWrapper absolute z-20 p-5 flex flex-col gap-2">
+    <div className="MainVideo w-full h-[80vh] lg:h-full rounded-md overflow-hidden relative">
+      <div className="btnWrapper absolute z-20 p-5 flex flex-col sm:flex-row gap-2">
         <Btn text="motion design" />
         <Btn text="art direction" />
       </div>
@@ -16,7 +16,7 @@ export default function Video() {
         className="object-cover object-center w-full h-full absolute z-10"
       ></video>
 
-      <div className="info absolute z-20 bottom-0 bg-black/20 backdrop-blur-md rounded-md  p-5 mx-2 mb-2 ">
+      <div className="info absolute z-20 bottom-0 bg-black/50 backdrop-blur-xs rounded-md  p-5 mx-2 mb-2 sm:w-4/6 sm:right-0 text-white">
         <h1 className="capitalize font-extrabold tracking-normal hover:tracking-[2em] transition-all duration-200 ease-in-out">Onvermono</h1>
         <p>
           Overmono is a visual experiment inspired by the duo&apos;s raw, electronic

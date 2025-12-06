@@ -14,7 +14,6 @@ export default function Hero() {
   return (
     <>
       <div className="relative w-full h-screen overflow-hidden">
-        {/* VIDEO */}
         <video
           src="/Videos/hero4.mp4"
           playsInline
@@ -24,7 +23,6 @@ export default function Hero() {
           className="fixed top-0 right-0 w-full h-full lg:w-4/6 object-cover z-0"
         />
 
-        {/* TEXT */}
 
         <div className="wrapper absolute px-7 py-10 w-full h-full">
         
