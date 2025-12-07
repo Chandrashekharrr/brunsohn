@@ -20,7 +20,7 @@ export default function Hero() {
           autoPlay
           loop
           muted
-          className="fixed top-0 right-0 w-full h-full lg:w-4/6 object-cover z-0"
+          className="absolute top-0 right-0 w-full h-full lg:w-4/6 object-cover z-0"
         />
 
 
