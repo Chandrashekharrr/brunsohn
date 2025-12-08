@@ -11,7 +11,7 @@ export default function Who() {
       <h1 className={`${myFont.className} capitalize text-[20vw] lg:text-[15vw]`}>
         who we are
       </h1>
-      <p className={`${myFont.className} uppercase text-[12vw] lg:text-[4vw] leading-none w-full lg:w-4/6`}>
+      <p className={`${myFont.className} uppercase text-[12vw] md:text-[9vw] lg:text-[4vw] leading-none w-full lg:w-4/6`}>
         We are a creative development studio shaping digital work where clarity
         meets intensity — merging design, engineering, and motion into
         experiences that feel alive.

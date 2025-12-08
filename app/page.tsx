@@ -1,3 +1,5 @@
+import About from "./components/About";
+import Footer from "./components/Footer";
 import Hero from "./components/Hero";
 import Mission from "./components/Mission";
 import Parallax from "./components/ParallaxGif";
@@ -17,6 +19,8 @@ export default function Home(){
   <Parallax />
   <What />
   <Who/>
+  <About/>
+  <Footer/>
   </div>
   )
 }

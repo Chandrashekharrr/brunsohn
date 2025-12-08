@@ -16,7 +16,7 @@ export default function Mission() {
     return (
 
         <>
-            <div className="missionWrapper w-full h-full bg-white z-20 relative px-7">
+            <div className="missionWrapper w-full h-full bg-white z-20 relative px-7 ">
                 <div className="mission w-full pt-25 flex flex-col lg:flex-row justify-left gap-5">
                     <h1 className={`${neueReg.className} capitalize text-3xl text-black leading-none lg:w-1/4 `}>Mission</h1>
                     <p className={`${neueReg.className} text-sm sm:text-md lg:text-xl text-black sm:w-4/6`}>
