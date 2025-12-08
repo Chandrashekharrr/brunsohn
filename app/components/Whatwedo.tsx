@@ -17,7 +17,7 @@ export default function What() {
 
 
     return (
-        <div className="whatweedo w-full min-h-full bg-white px-7 pt-30">
+        <div className="whatweedo w-full min-h-full bg-white px-7 pt-30 relative z-30">
             <h1
                 className={`${myFont.className} capitalize font-extrabold text-[20vw] leading-none text-black`}
             >

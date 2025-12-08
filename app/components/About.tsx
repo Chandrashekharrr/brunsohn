@@ -20,7 +20,8 @@ export default function About() {
 
     return (
         <>
-        <div className="Goal w-full pt-20 flex flex-col lg:flex-row justify-left gap-5 bg-white px-7 py-10 relative">
+        <div className="wrapperParent w-full min-h-full bg-white relative z-30"> 
+        <div className="Goal w-full pt-20 flex flex-col lg:flex-row justify-left gap-5 bg-white px-7 py-10 relative z-30">
             <h1 className={`${neueReg.className} capitalize text-3xl text-black leading-none lg:w-1/4`}>approach</h1>
             <div className="paraWrapper w-full sm:w-4/6 flex flex-col gap-5">
                 <p className={`${neueReg.className} text-sm sm:text-md lg:text-xl text-black`}>
@@ -51,7 +52,7 @@ export default function About() {
             </div>
         </div>
 
-        <div className="dd bg-white w-full py-10 ">
+        <div className="dd bg-white w-full py-10 relative z-30">
         <div className="divider my-10 bg-gray-300 h-px w-full "></div>
         </div>
          <div className="Goal w-full pt-20 flex flex-col lg:flex-row justify-left gap-5 bg-white px-7 py-10 relative">
@@ -78,7 +79,7 @@ export default function About() {
             </div>
         </div>
 
-
+        </div>
         </>
 
     )

@@ -63,7 +63,7 @@ export default function Hero() {
           </div>
 
           <div
-            className={`${neueReg.className} w-full uppercase leading-none  mix-blend-difference text-white absolute bottom-10 z-40`}
+            className={`${neueReg.className} w-full uppercase leading-none  mix-blend-difference text-white absolute bottom-10 z-50`}
           >
             <div className="para overflow-hidden">
               <Text

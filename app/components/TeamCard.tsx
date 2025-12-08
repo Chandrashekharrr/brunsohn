@@ -11,7 +11,7 @@ export default function Team(){
 
 
     return(
-        <div className="wrapperTeam w-fit p-2 sm:p-5 flex flex-col flex-wrap justify-between items-start gap-2">
+        <div className="wrapperTeam w-fit p-2 sm:p-5 flex flex-col flex-wrap justify-between items-start gap-2 relative bg-white z-30">
 
             <div className="Imagewrapper w-full h-[50vh] sm:h-[40vh] xl:h-[50vh] relative rounded-md overflow-hidden">
             <Image

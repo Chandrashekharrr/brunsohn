@@ -9,7 +9,7 @@ const neueReg = localFont({
 export default function Footer() {
 
     return (
-        <div className="footerwrapper w-full h-full bg-black flex flex-col justify-between items-center px-7">
+        <div className="footerwrapper w-full h-full bg-black flex flex-col justify-between items-center px-7 relative z-30">
 
             <div className="divide w-full h-px bg-zinc-700 mt-20"></div>
 

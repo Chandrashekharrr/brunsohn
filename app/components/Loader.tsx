@@ -21,7 +21,7 @@ export default function Loader() {
   }, []);
 
   return (
-    <div ref={containerRef} className="loader w-full h-screen fixed z-30  ">
+    <div ref={containerRef} className="loader w-full h-screen fixed z-40  ">
       <div className="separator w-full h-[40%] bg-black"></div>
       <div className="separator w-full h-[35%] bg-black"></div>
       <div className="separator w-full h-[25%] bg-black"></div>

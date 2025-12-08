@@ -7,7 +7,7 @@ const myFont = localFont({
 
 export default function Who() {
   return (
-    <div className="who w-full h-full bg-white px-7 py-10 text-black">
+    <div className="who w-full h-full bg-white px-7 py-10 text-black relative z-30">
       <h1 className={`${myFont.className} capitalize text-[20vw] lg:text-[15vw]`}>
         who we are
       </h1>
