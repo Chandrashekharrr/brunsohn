@@ -15,6 +15,20 @@ export default function Loader() {
           duration: 2,
           ease: "power3.inOut",
           stagger: 0.25,
+          // delay:2,
+          onComplete: () => {
+            // Fade out the whole loader
+            gsap.to(containerRef.current, {
+              opacity: 0,
+              duration: 0.5,
+              ease: "power2.out",
+              onComplete: () => {
+                // Disable interactions completely
+                containerRef.current!.style.pointerEvents = "none";
+              }
+            });
+          }
+          
         });
       }, 1500);
     }
