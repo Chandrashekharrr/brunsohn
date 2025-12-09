@@ -1,7 +1,10 @@
+'use client';
 import localFont from 'next/font/local'
 import Video from './Video';
 import Btn from './Btm';
 import Link from 'next/link';
+import { useRef } from 'react';
+import { useTextReveal } from '../hooks/useTextReveal';
 
 const myFont = localFont({
     src: '../../public/Fonts/FG.otf',
@@ -13,13 +16,21 @@ const neueReg = localFont({
 })
 
 export default function Mission() {
+
+    const headElem = useRef<HTMLHeadingElement>(null);
+    const paraElem = useRef<HTMLParagraphElement>(null);
+
+    useTextReveal(headElem);
+    useTextReveal(paraElem);
+
+
     return (
 
         <>
             <div className="missionWrapper w-full h-full bg-white z-20 relative px-7 ">
                 <div className="mission w-full pt-25 flex flex-col lg:flex-row justify-left gap-5">
-                    <h1 className={`${neueReg.className} capitalize text-3xl text-black leading-none lg:w-1/4 `}>Mission</h1>
-                    <p className={`${neueReg.className} text-sm sm:text-md lg:text-xl text-black sm:w-4/6`}>
+                    <h1 ref={headElem} className={`${neueReg.className} capitalize text-3xl text-black leading-none lg:w-1/4 `}>Mission</h1>
+                    <p ref={paraElem} className={`${neueReg.className} text-sm sm:text-md lg:text-xl text-black sm:w-4/6`}>
                         We craft digital experiences that balance precision and emotion —
                         blending design, code, and movement into timeless, meaningful systems
                     </p>
