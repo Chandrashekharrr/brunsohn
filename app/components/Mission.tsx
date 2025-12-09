@@ -5,6 +5,7 @@ import Btn from './Btm';
 import Link from 'next/link';
 import { useRef } from 'react';
 import { useTextReveal } from '../hooks/useTextReveal';
+import { useRevealStag } from '../hooks/useRevealStag';
 
 const myFont = localFont({
     src: '../../public/Fonts/FG.otf',
@@ -17,11 +18,17 @@ const neueReg = localFont({
 
 export default function Mission() {
 
-    const headElem = useRef<HTMLHeadingElement>(null);
-    const paraElem = useRef<HTMLParagraphElement>(null);
+    const headElemOne = useRef<HTMLHeadingElement>(null);
+    const paraElemOne = useRef<HTMLParagraphElement>(null);
+    const paraElemTwo = useRef<HTMLParagraphElement>(null);
+    const paraElemThree = useRef<HTMLParagraphElement>(null);
+    const develemRef = useRef<HTMLDivElement>(null);
 
-    useTextReveal(headElem);
-    useTextReveal(paraElem);
+    useTextReveal(paraElemOne);
+    useTextReveal(paraElemTwo);
+    useTextReveal(paraElemThree);
+    useTextReveal(develemRef);
+    useRevealStag(headElemOne);
 
 
     return (
@@ -29,8 +36,8 @@ export default function Mission() {
         <>
             <div className="missionWrapper w-full h-full bg-white z-20 relative px-7 ">
                 <div className="mission w-full pt-25 flex flex-col lg:flex-row justify-left gap-5">
-                    <h1 ref={headElem} className={`${neueReg.className} capitalize text-3xl text-black leading-none lg:w-1/4 `}>Mission</h1>
-                    <p ref={paraElem} className={`${neueReg.className} text-sm sm:text-md lg:text-xl text-black sm:w-4/6`}>
+                    <h1  className={`${neueReg.className} capitalize text-3xl text-black leading-none lg:w-1/4 `}>Mission</h1>
+                    <p ref={paraElemOne} className={`${neueReg.className} text-sm sm:text-md lg:text-xl text-black sm:w-4/6`}>
                         We craft digital experiences that balance precision and emotion —
                         blending design, code, and movement into timeless, meaningful systems
                     </p>
@@ -39,7 +46,7 @@ export default function Mission() {
                 <div className="Goal w-full pt-20 flex flex-col lg:flex-row justify-left gap-5">
                     <h1 className={`${neueReg.className} capitalize text-3xl text-black leading-none lg:w-1/4`}>Goal</h1>
                     <div className="paraWrapper w-full sm:w-4/6 flex flex-col gap-5">
-                        <p className={`${neueReg.className} text-sm sm:text-md lg:text-xl text-black`}>
+                        <p ref={paraElemTwo} className={`${neueReg.className} text-sm sm:text-md lg:text-xl text-black`}>
                             Our goal is to craft digital experiences that stand at the
                             intersection of design, technology, and emotion. We believe that every
                             interface has the power to express identity — not just through
@@ -48,7 +55,7 @@ export default function Mission() {
                             what&apos;s unnecessary, to focus on what&apos;s essential, and to
                             build with clarity and precision.
                         </p>
-                        <p className={`${neueReg.className} text-sm lg:text-xl text-black`}>
+                        <p ref={paraElemThree} className={`${neueReg.className} text-sm lg:text-xl text-black`}>
                             Our goal isn&apos;t only to design beautiful websites, but to create
                             meaningful digital spaces where brands can communicate their truth
                             with authenticity and style.
@@ -62,16 +69,18 @@ export default function Mission() {
 
 
             <div id='selectedWrok' className="selectedWrok w-full min-h-full bg-white relative z-20 px-7 flex flex-col gap-7 py-7">
-                <h1 className={`${myFont.className} capitalize text-black text-[20vw] leading-none`}>selected Work</h1>
+                <h1 ref={headElemOne} className={`uppercase text-black text-[10vw] leading-none whitespace-nowrap overflow-hidden inline-block font-extrabold`}>
+                    selected Work
+                    </h1>
 
 
                 <div className="wrapper w-full min-h-full flex flex-col lg:flex-row gap-7">
 
                     <div className="childOne w-full flex flex-col gap-7">
-                        <div className='lg:w-full lg:h-[160vh]'>
+                        <div  className='lg:w-full lg:h-[160vh]'>
                             <Video />
                         </div>
-                        <div className=' lg:w-full lg:h-[160vh]'>
+                        <div  className=' lg:w-full lg:h-[160vh]'>
                             <Video />
                         </div>
 
@@ -79,10 +88,10 @@ export default function Mission() {
 
 
                     <div className="childTwo w-full flex flex-col gap-7 lg:mt-25">
-                        <div className='lg:w-full lg:h-[160vh]'>
+                        <div  className='lg:w-full lg:h-[160vh]'>
                             <Video />
                         </div>
-                        <div className=' lg:w-full lg:h-[160vh]'>
+                        <div  className=' lg:w-full lg:h-[160vh]'>
                             <Video />
                         </div>
 
@@ -90,7 +99,7 @@ export default function Mission() {
 
                 </div>
 
-               <div className="buttonwrapper w-full flex justify-center items-center py-30">
+               <div ref={develemRef} className="buttonwrapper w-full flex justify-center items-center py-30">
                <Link href="#selectedWrok"> <Btn text="view all work"/></Link>
                </div>
 

@@ -3,23 +3,28 @@
 import { useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { SplitText } from "gsap/SplitText";
 
 gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(SplitText) 
 
-export function useTextReveal(ref: React.RefObject<HTMLElement | null>, options = {}) {
+export function useRevealStag(ref: React.RefObject<HTMLElement | null>, options = {}) {
   useEffect(() => {
     if (!ref.current) return;
 
     const ctx = gsap.context(() => {
-      gsap.from(ref.current, {
-        y: 60,
-        opacity: 0,
-        duration: 1.2,
+        const split = new SplitText(ref.current,{
+            type:"chars, words",
+        })
+      gsap.from(split.words, {
+        y: 300,
+        duration: 1,
         ease: "power3.out",
-        stagger:0.5,
+        stagger:0.3,
         scrollTrigger: {
           trigger: ref.current,
-          start: "top 75%",
+          start: "top 90%",
+          end: "top 20%",
           scrub:true,
           ...options,
         },

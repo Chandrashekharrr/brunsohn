@@ -1,5 +1,9 @@
+'use client';
 import localFont from "next/font/local";
 import Butt from "./Butt";
+import { useRef } from "react";
+import { useRevealStag } from "../hooks/useRevealStag";
+import { useTextReveal } from "../hooks/useTextReveal";
 
 const myFont = localFont({
     src: "../../public/Fonts/FG.otf",
@@ -15,16 +19,22 @@ const neueReg = localFont({
 
 export default function What() {
 
+    const eleRef = useRef<HTMLHeadingElement>(null);
+    const paraeleRef = useRef<HTMLParagraphElement>(null);
+
+    useRevealStag(eleRef);
+    useTextReveal(paraeleRef);
 
     return (
         <div className="whatweedo w-full min-h-full bg-white px-7 pt-30 relative z-30">
             <h1
-                className={`${myFont.className} capitalize font-extrabold text-[20vw] leading-none text-black`}
+            ref={eleRef}
+                className={`${myFont.className} capitalize font-extrabold text-[20vw] leading-none text-black overflow-hidden inline-block`}
             >
                 what we do
             </h1>        
             
-            <p className={`${neueReg.className} text-sm lg:text-xl text-black w-full lg:w-1/2`}>
+            <p ref={paraeleRef} className={`${neueReg.className} text-sm lg:text-xl text-black w-full lg:w-1/2`}>
                             Our goal isn&apos;t only to design beautiful websites, but to create
                             meaningful digital spaces where brands can communicate their truth
                             with authenticity and style. but to create meaningful digital spaces.
