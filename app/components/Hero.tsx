@@ -19,20 +19,21 @@ const neueReg = localFont({
 
 export default function Hero() {
   const VideoRef = useRef<HTMLVideoElement | null>(null);
-  const headingRef = useRef<HTMLHeadElement | null>(null);
+  const headingRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     if (!VideoRef.current) return;
 
     gsap.fromTo(
       VideoRef.current,
-      { scale: 1.5,
-        borderRadius:"0px"
-       }, // START bigger
+      {
+        scale: 1.5,
+        borderRadius: "0px"
+      }, // START bigger
       {
         scale: 0.5, // END normal size
         ease: "none",
-        borderRadius:"15px",
+        borderRadius: "15px",
         scrollTrigger: {
           trigger: VideoRef.current,
           scrub: true,
@@ -41,9 +42,33 @@ export default function Hero() {
     );
   }, []);
 
+  useEffect(() => {
+
+    if (!headingRef.current) return;
+
+    gsap.fromTo(headingRef.current.querySelector("h1"),
+      {
+        y: 500,
+      },
+      {
+        y: 0,
+        duration: 2,
+        ease: "none",
+        scrollTrigger: {
+          trigger: headingRef.current,
+          scrub: true,
+          // toggleActions: "play none none reverse",
+          markers: false,
+        }
+      })
+
+
+  })
+
+
   return (
     <>
-      <div  className="relative w-full h-screen overflow-hidden">
+      <div className="relative w-full h-screen overflow-hidden">
         <video
           ref={VideoRef}
           src="/Videos/hero4.mp4"
@@ -55,11 +80,23 @@ export default function Hero() {
         />
 
         <div className="wrapper absolute px-7 py-10 w-full h-full">
+          
+
           <div
             className={`${myFont.className} uppercase font-extrabold text-[20vw] leading-none mix-blend-difference absolute text-white`}
-          > 
+          >
+
             <h1 className="">brunsohn</h1>
-            {/* <Text texts="brunsohn" textSize="text-[20vw]"/> */}
+          </div>
+
+          <div ref={headingRef} className={`overflow-hidden  ${myFont.className} uppercase leading-none text-white mix-blend-difference fixed z-50`}>
+
+            <h1 className={`uppercase overflow-hidden inline-block leading-none`}>
+              <span  className="inline-block">
+                <span className="inline-block text-[8vw] lg:text-[2vw]">brunsohn</span>
+              </span>
+            </h1>
+
           </div>
 
           <div
