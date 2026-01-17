@@ -25,7 +25,7 @@ export function useRevealStag(ref: React.RefObject<HTMLElement | null>, options 
           trigger: ref.current,
           start: "top 90%",
           end: "top 20%",
-          scrub:true,
+          scrub:0.5,
           ...options,
         },
       });
